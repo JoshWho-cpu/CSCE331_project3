@@ -3,12 +3,9 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  preview: {
-    host: "0.0.0.0", // Bind to all network interfaces
-    allowedHosts: ["csce331-project3-1.onrender.com"], // Add your Render host here
-    port: process.env.PORT || 5173, // Ensure it respects the assigned port
-    host: true, // Allow external access
+export default {
+  server: {
+    host: '0.0.0.0',
+    port: process.env.PORT || 5173
   }
-})
+};
