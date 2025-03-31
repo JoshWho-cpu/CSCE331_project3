@@ -1,12 +1,20 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './global.css'
+import KioskMain from './customer-kiosk/pages/KioskMain'
+import ManagerRoutes from './manager/routes'
+import LoginPage from './LoginPage'
 
 function App() {
+
   return (
-    <div className="app">
-      {/* Routes will be implemented here */}
-      <h1 className='text-2xl font-bold underline'>Team 54 Project</h1>
-      <p>Welcome to our CSCE 331 Project</p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LoginPage/>} />
+        <Route path="/customer" element={<KioskMain/>} />
+        {/* <Route path="/cashier" element={ } /> */}
+        <Route path="/manager/*" element={<ManagerRoutes/>} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

@@ -1,0 +1,26 @@
+services:
+  base:
+    image: node:lts-alpine
+    user: 1000:998
+    volumes:
+      - .:/usr/src/service/
+    working_dir: /usr/src/service
+
+  install:
+    extends:
+      service: base
+    command: sh -c "npm install"
+
+  build:
+    extends:
+      service: base
+    command: npm run build
+  create-bundles:
+    extends:
+      service: base
+    command: npm run create-bundles
+
+
+
+
+
