@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default {
   server: {
     host: '0.0.0.0',
-    port: process.env.PORT || 5173
+    port: process.env.PORT || 5173,
+    allowedHosts: ['csce331-project3-cuxy.onrender.com']
   }
 };
