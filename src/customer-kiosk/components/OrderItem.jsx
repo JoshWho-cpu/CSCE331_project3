@@ -13,7 +13,7 @@ const OrderItem = ({ item, removeFromOrder }) => {
                 <p className="text-sm text-gray-400">x{item.quantity}</p>
             </div>
             <div className="flex flex-col items-end">
-                <p className="text-sm font-medium font-mono">${item.price.toFixed(2)}</p>
+                <p className="text-sm font-medium font-mono">${Number(item.price).toFixed(2)}</p>
                 <button 
                     onClick={handleRemove}
                     className="text-sm text-red-500 cursor-pointer hover:text-red-700"

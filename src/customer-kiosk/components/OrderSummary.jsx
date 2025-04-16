@@ -37,13 +37,13 @@ const OrderSummary = ({ order, setOrderItems }) => {
   };
 
   return (
-    <div className="bg-white h-full flex flex-col">
+    <div className="bg-white h-full flex flex-col overflow-hidden">
       <div className="flex flex-col gap-2 items-center border-b border-gray-100 p-4">
         <h1 className="text-2xl font-semi-bold">Piyush's Order</h1>
         <p className="text-sm text-gray-400">Order #: 1234567890</p>
       </div>
-      <div className="flex-1 flex flex-col">
-        <div className="flex-1 flex-col overflow-y-auto p-4 space-y-4">
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <div className="flex-1 overflow-y-auto p-4 space-y-4">
           {order.map((item) => (
             <OrderItem key={item.id} item={item} removeFromOrder={removeFromOrder} />
           ))}
@@ -55,7 +55,7 @@ const OrderSummary = ({ order, setOrderItems }) => {
               <p className="text-sm font-mono">${calculateSubtotal().toFixed(2)}</p>
             </div>
             <div className="flex flex-row justify-between text-gray-400">
-              <p className="text-sm">Tax(8.25%)</p>
+              <p className="text-sm">Tax (8.25%)</p>
               <p className="text-sm font-mono">${calculateTax().toFixed(2)}</p>
             </div>
             <div className="flex flex-row justify-between pt-2">

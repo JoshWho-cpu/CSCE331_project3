@@ -7,6 +7,34 @@ services:
       - .:/usr/src/service
     working_dir: /usr/src/service
     command: npm run dev
+    networks:
+      - app-network
     ports:
-      - 5173:5173
+      - 127.0.0.1:5173:5173
 
+  backend:
+    image: node:lts-alpine
+    user: 1000:998
+    volumes:
+      - .:/usr/src/service
+    working_dir: /usr/src/service
+    command: npx nodemon src/server.js
+    networks:
+      - app-network
+    ports:
+      - 127.0.0.1:3000:3000
+
+  testing:
+    image: flawiddsouza/restfox:0.36.0
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    ports:
+      - 127.0.0.1:4004:4004
+
+
+
+networks:
+  app-network:
+    driver: bridge
