@@ -10,7 +10,7 @@ const MenuList = () => {
   const [newProductImage, setNewProductImage] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/products')
+    fetch('https://csce331-project3-backend.onrender.com/products')
       .then(res => {
         if (!res.ok) throw new Error('Failed to fetch products');
         return res.json();
@@ -31,7 +31,7 @@ const MenuList = () => {
     const updatedProduct = products.find(p => p.id === id);
     console.log('Saving product:', updatedProduct);
     try {
-      const response = await fetch(`http://localhost:3000/product/${id}`, {
+      const response = await fetch(`https://csce331-project3-backend.onrender.com/product/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ const MenuList = () => {
     };
   
     try {
-      const response = await fetch('http://localhost:3000/product', {
+      const response = await fetch('https://csce331-project3-backend.onrender.com/product', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newProduct),

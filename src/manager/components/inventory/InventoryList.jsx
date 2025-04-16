@@ -10,7 +10,7 @@ const InventoryList = () => {
   const [newInventoryUnits, setNewInventoryUnits] = useState('');
   
     useEffect(() => {
-      fetch('http://localhost:3000/inventories')
+      fetch('https://csce331-project3-backend.onrender.com/inventories')
         .then(res => {
           if (!res.ok) throw new Error('Failed to fetch inventories');
           return res.json();
@@ -31,7 +31,7 @@ const InventoryList = () => {
       const updatedInventory = inventories.find(i => i.id === id);
       console.log('Saving invenotry:', updatedInventory);
       try {
-        const response = await fetch(`http://localhost:3000/inventory/${id}`, {
+        const response = await fetch(`https://csce331-project3-backend.onrender.com/inventory/${id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const InventoryList = () => {
       };
     
       try {
-        const response = await fetch('http://localhost:3000/inventory', {
+        const response = await fetch('https://csce331-project3-backend.onrender.com/inventory', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(newInventory),

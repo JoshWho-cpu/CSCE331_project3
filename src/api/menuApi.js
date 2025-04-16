@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create an axios instance with default settings
 const api = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'https://csce331-project3-backend.onrender.com',
   withCredentials: true,
   timeout: 10000,
 });

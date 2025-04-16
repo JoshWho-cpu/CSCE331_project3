@@ -8,7 +8,7 @@ const OrderList = () => {
   const [error, setError] = useState(null);
     
     useEffect(() => {
-      fetch('http://localhost:3000/orders')
+      fetch('https://csce331-project3-backend.onrender.com/orders')
         .then(res => {
           if (!res.ok) throw new Error('Failed to fetch orders');
           return res.json();
@@ -29,7 +29,7 @@ const OrderList = () => {
       const updatedOrder = orders.find(o => o.id === id);
       console.log('Saving order:', updatedOrder);
       try {
-        const response = await fetch(`http://localhost:3000/orders/${id}`, {
+        const response = await fetch(`https://csce331-project3-backend.onrender.com/orders/${id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

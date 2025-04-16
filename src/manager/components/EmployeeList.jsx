@@ -8,7 +8,7 @@ function EmployeeList() {
   const [newEmployeePassword, setNewEmployeePassword] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/employees')
+    fetch('https://csce331-project3-backend.onrender.com/employees')
       .then(res => {
         if (!res.ok) throw new Error('Failed to fetch employees');
         return res.json();
@@ -30,7 +30,7 @@ function EmployeeList() {
     console.log('Saving employee:', updatedEmployee);
     // Replace with PUT request when you're ready
     try {
-      const response = await fetch(`http://localhost:3000/employee/${id}`, {
+      const response = await fetch(`https://csce331-project3-backend.onrender.com/employee/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ function EmployeeList() {
     };
   
     try {
-      const response = await fetch('http://localhost:3000/employee', {
+      const response = await fetch('https://csce331-project3-backend.onrender.com/employee', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newEmployee),
