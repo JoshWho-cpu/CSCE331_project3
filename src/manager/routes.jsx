@@ -4,7 +4,6 @@ import OrderHistory from './pages/OrderHistory';
 import EmployeeManagement from './pages/EmployeeManagement';
 import MenuManagement from './pages/MenuManagement';
 import InventoryManagement from './pages/InventoryManagement';
-import ReportGeneration from './pages/ReportGeneration';
 
 const ManagerRoutes = () => {
   return (
@@ -14,7 +13,6 @@ const ManagerRoutes = () => {
       <Route path="EmployeeManagement" element={<EmployeeManagement />} /> 
       <Route path="MenuManagement" element={<MenuManagement />} /> 
       <Route path="InventoryManagement" element={<InventoryManagement />} /> 
-      {/* <Route path="ReportGeneration" element={<ReportGeneration />} />  */}
     </Routes>
   );
 };
